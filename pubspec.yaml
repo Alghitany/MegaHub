@@ -34,6 +34,38 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  # State management
+  flutter_bloc: ^9.1.0
+  # Code generator (Mainly used with cubit & retrofit)
+  freezed: ^2.5.7
+  freezed_annotation: ^2.4.4
+  # For dependency injection
+  get_it: ^8.0.3
+  # Annotation for the json_serializable code generator
+  json_annotation: ^4.9.0
+  # Networking
+  dio: ^5.8.0+1
+  retrofit: ^4.4.2
+  retrofit_generator: ^9.1.5
+  pretty_dio_logger: ^1.4.0
+  # Localization
+  easy_localization: ^3.0.3
+  intl: 0.20.2
+  # For splash screen
+  flutter_native_splash: ^2.4.4
+  # An SVG rendering and widget library for Flutter, which allows painting
+  flutter_svg: ^2.0.17
+  # for adapting screen and font size.
+  flutter_screenutil: ^5.9.3
+  firebase_core: ^3.12.1
+  # Flutter library to load and cache network images.
+  cached_network_image: ^3.4.1
+  # Reading and writing simple key-value pairs.
+  shared_preferences: ^2.5.2
+  # Provides API to store data in secure storage.
+  flutter_secure_storage: ^9.2.4
+  # Provides an easy way to add shimmer effect
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +77,10 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  # Automatically generate code for converting to and from JSON by annotating Dart classes.
+  json_serializable: ^6.9.0
+  # A build system for Dart code generation and modular compilation.
+  build_runner: ^2.4.13
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
