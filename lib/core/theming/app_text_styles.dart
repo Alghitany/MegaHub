@@ -14,3 +14,10 @@ class AppTextStyles {
     color: Colors.white.withOpacity(0.8),
   );
 }
+
+class AppSpacing {
+  static const double small = 8.0;
+  static const double medium = 15.0;
+  static const double large = 20.0;
+  static const double extraLarge = 30.0;
+}
