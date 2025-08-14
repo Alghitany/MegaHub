@@ -81,15 +81,12 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       body: Column(
         children: [
-          // Top illustration
           Image.asset(
             "assets/images/signup_ui.jpg",
             height: MediaQuery.of(context).size.height * 0.35,
             width: double.infinity,
             fit: BoxFit.cover,
           ),
-
-          // White rounded container
           Expanded(
             child: Container(
               width: double.infinity,
@@ -107,7 +104,6 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Signup / Login tabs
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -139,7 +135,6 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       SizedBox(height: 20),
 
-                      // Name
                       _buildInputField(
                         controller: namecontroller,
                         hintText: "Name",
@@ -149,7 +144,6 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
                       SizedBox(height: 15),
 
-                      // Email
                       _buildInputField(
                         controller: emailcontroller,
                         hintText: "Email",
@@ -163,8 +157,6 @@ class _SignupScreenState extends State<SignupScreen> {
                         },
                       ),
                       SizedBox(height: 15),
-
-                      // Password
                       _buildInputField(
                         controller: passwordcontroller,
                         hintText: "Password",
@@ -192,8 +184,6 @@ class _SignupScreenState extends State<SignupScreen> {
                         },
                       ),
                       SizedBox(height: 15),
-
-                      // Confirm Password
                       _buildInputField(
                         controller: confirmpasswordcontroller,
                         hintText: "Confirm Password",
@@ -220,8 +210,6 @@ class _SignupScreenState extends State<SignupScreen> {
                           return null;
                         },
                       ),
-
-                      // Forgot password
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
@@ -237,8 +225,6 @@ class _SignupScreenState extends State<SignupScreen> {
                       ),
 
                       SizedBox(height: 10),
-
-                      // Signup Button
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
