@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mega_hub/core/routing/routes.dart';
+import 'package:mega_hub/features/Signup/ui/Signup-ui.dart';
 import '../../features/home/ui/home_screen.dart';
 
 class AppRouter {
@@ -9,7 +10,7 @@ class AppRouter {
     switch (settings.name) {
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => const SignupScreen(),
         );
       default:
         return null;
