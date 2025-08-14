@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:mega_hub/core/theming/app_colors.dart';
 import 'core/routing/app_router.dart';
 import 'core/routing/routes.dart';
 
@@ -17,10 +17,10 @@ class MegaHubApp extends StatelessWidget {
       child: MaterialApp(
         title: 'MegaHub App',
         theme: ThemeData(
-            primaryColor: Colors.red,
+            primaryColor: AppColors.appMainColor,
             scaffoldBackgroundColor: Colors.white),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.homeScreen,
+        initialRoute: Routes.splashScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
