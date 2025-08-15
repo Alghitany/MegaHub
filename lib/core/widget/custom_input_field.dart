@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_hub/core/theming/app_colors.dart';
 
 class CustomInputField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String hintText;
-  final IconData icon;
+  final double? hintFontSize;
+  final Color? hintTextColor;
+  final Widget? prefixIcon;
   final String? Function(String?)? validator;
   final bool obscureText;
   final Widget? suffixIcon;
+  final double? borderRadius;
 
   const CustomInputField({
     super.key,
-    required this.controller,
+     this.controller,
     required this.hintText,
-    required this.icon,
+     this.prefixIcon,
     this.validator,
     this.obscureText = false,
-    this.suffixIcon,
+    this.suffixIcon, this.hintFontSize, this.hintTextColor,  this.borderRadius,
   });
 
   @override
@@ -26,11 +31,11 @@ class CustomInputField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: const TextStyle(fontSize: 18, color: Colors.grey),
-        prefixIcon: Icon(icon, color: Colors.grey),
+        hintStyle:  TextStyle(fontSize: hintFontSize??12.sp, color: hintTextColor??AppColors.smokeyGrey),
+        prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius:BorderRadius.circular(borderRadius??16.r),
         ),
       ),
     );

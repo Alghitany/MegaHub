@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_hub/core/helpers/font_weight_helper.dart';
 
+import 'app_colors.dart';
+
 class AppTextStyles {
   static final TextStyle megaSplash = TextStyle(
     fontSize: 48.sp,
@@ -13,11 +15,18 @@ class AppTextStyles {
     fontSize: 14.sp,
     color: Colors.white.withOpacity(0.8),
   );
+  static final TextStyle loginAndSignupSwitchChosed = TextStyle(
+    fontSize: 25.sp,
+    color: AppColors.appMainColor,
+    fontWeight: FontWeightHelper.bold,
+    decoration: TextDecoration.underline,
+    decorationColor: AppColors.appMainColor,
+  );
+  static final TextStyle loginAndSignupSwitchUnchosed =TextStyle(
+    fontSize: 25,
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  );
 }
 
-class AppSpacing {
-  static const double small = 8.0;
-  static const double medium = 15.0;
-  static const double large = 20.0;
-  static const double extraLarge = 30.0;
-}
+

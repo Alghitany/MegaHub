@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/theming/app_colors.dart';
+import '../../../core/widget/login_and_signup_switch.dart';
 import '../widget/signup_form.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -11,13 +14,15 @@ class SignupScreen extends StatelessWidget {
         children: [
           Image.asset(
             "assets/images/signup_ui.jpg",
-            height: MediaQuery.of(context).size.height * 0.35,
-            width: double.infinity,
+            height: 413.h,
+            width: double.infinity.w,
             fit: BoxFit.cover,
           ),
+          LoginAndSignupSwitch(),
           const Expanded(
             child: SignupForm(),
           ),
+
         ],
       ),
     );

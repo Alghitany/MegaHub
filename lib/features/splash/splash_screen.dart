@@ -170,7 +170,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     // Navigate to home screen
     if (mounted) {
-      context.pushReplacementNamed(Routes.homeScreen);
+      context.pushReplacementNamed(Routes.signupScreen);
     }
   }
 
