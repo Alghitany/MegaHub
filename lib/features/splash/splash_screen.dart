@@ -1,3 +1,4 @@
+import 'dart:math' as Math;
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,22 +20,36 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
-  late AnimationController _logoController;
+  late AnimationController _barsController;
   late AnimationController _textController;
   late AnimationController _progressController;
-  late AnimationController _logoPartsController;
+  late AnimationController _floatingController;
 
-  late Animation<double> _logoScaleAnimation;
-  late Animation<double> _logoFadeAnimation;
+  // Individual bar animations
+  late Animation<Offset> _bar1SlideAnimation;
+  late Animation<Offset> _bar2SlideAnimation;
+  late Animation<Offset> _bar3SlideAnimation;
+  late Animation<Offset> _bar4SlideAnimation;
+
+  late Animation<double> _bar1ScaleAnimation;
+  late Animation<double> _bar2ScaleAnimation;
+  late Animation<double> _bar3ScaleAnimation;
+  late Animation<double> _bar4ScaleAnimation;
+
+  late Animation<double> _bar1RotationAnimation;
+  late Animation<double> _bar2RotationAnimation;
+  late Animation<double> _bar3RotationAnimation;
+  late Animation<double> _bar4RotationAnimation;
+
+  late Animation<double> _barsOpacityAnimation;
+
+  // Floating animation
+  late Animation<double> _floatingAnimation;
+
+  // Text animations
   late Animation<Offset> _textSlideAnimation;
   late Animation<double> _textFadeAnimation;
   late Animation<double> _progressAnimation;
-
-  // Animations for logo parts
-  late Animation<Offset> _leftPartAnimation;
-  late Animation<Offset> _rightPartAnimation;
-  late Animation<Offset> _centerPartAnimation;
-  late Animation<double> _logoRotationAnimation;
 
   @override
   void initState() {
@@ -44,65 +59,134 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void _initializeAnimations() {
-    // Logo parts animation controller
-    _logoPartsController = AnimationController(
+    // Main bars animation controller
+    _barsController = AnimationController(
+      duration: const Duration(milliseconds: 3000),
+      vsync: this,
+    );
+
+    // Floating animation controller for continuous movement
+    _floatingController = AnimationController(
       duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
 
-    // Individual logo parts animations
-    _leftPartAnimation = Tween<Offset>(
-      begin: const Offset(-2.0, 0),
-      end: Offset.zero,
+    // Bars opacity
+    _barsOpacityAnimation = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
     ).animate(CurvedAnimation(
-      parent: _logoPartsController,
+      parent: _barsController,
+      curve: const Interval(0.0, 0.3, curve: Curves.easeInOut),
+    ));
+
+    // Bar 1 animations (leftmost bar - lean right)
+    _bar1SlideAnimation = Tween<Offset>(
+      begin: const Offset(-4.0, -2.0),
+      end: const Offset(-1.5, 0.0),
+    ).animate(CurvedAnimation(
+      parent: _barsController,
       curve: const Interval(0.0, 0.6, curve: Curves.elasticOut),
     ));
 
-    _rightPartAnimation = Tween<Offset>(
-      begin: const Offset(2.0, 0),
-      end: Offset.zero,
+    _bar1ScaleAnimation = Tween<double>(
+      begin: 0.3,
+      end: 1.0,
     ).animate(CurvedAnimation(
-      parent: _logoPartsController,
+      parent: _barsController,
+      curve: const Interval(0.0, 0.5, curve: Curves.bounceOut),
+    ));
+
+    _bar1RotationAnimation = Tween<double>(
+      begin: -0.8,
+      end: 0.15, // Lean right (15 degrees)
+    ).animate(CurvedAnimation(
+      parent: _barsController,
+      curve: const Interval(0.2, 0.7, curve: Curves.elasticOut),
+    ));
+
+    // Bar 2 animations (second bar - lean left)
+    _bar2SlideAnimation = Tween<Offset>(
+      begin: const Offset(-2.0, -4.0),
+      end: const Offset(-0.5, 0.0),
+    ).animate(CurvedAnimation(
+      parent: _barsController,
       curve: const Interval(0.1, 0.7, curve: Curves.elasticOut),
     ));
 
-    _centerPartAnimation = Tween<Offset>(
-      begin: const Offset(0, -2.0),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _logoPartsController,
-      curve: const Interval(0.2, 0.8, curve: Curves.bounceOut),
-    ));
-
-    _logoRotationAnimation = Tween<double>(
-      begin: 0.0,
+    _bar2ScaleAnimation = Tween<double>(
+      begin: 0.3,
       end: 1.0,
     ).animate(CurvedAnimation(
-      parent: _logoPartsController,
-      curve: const Interval(0.8, 1.0, curve: Curves.easeInOut),
+      parent: _barsController,
+      curve: const Interval(0.1, 0.6, curve: Curves.bounceOut),
     ));
 
-    // Main logo animations
-    _logoController = AnimationController(
-      duration: const Duration(milliseconds: 1800),
-      vsync: this,
-    );
-
-    _logoScaleAnimation = Tween<double>(
+    _bar2RotationAnimation = Tween<double>(
       begin: 0.8,
-      end: 1.0,
+      end: -0.15, // Lean left (-15 degrees)
     ).animate(CurvedAnimation(
-      parent: _logoController,
-      curve: Curves.elasticOut,
+      parent: _barsController,
+      curve: const Interval(0.3, 0.8, curve: Curves.elasticOut),
     ));
 
-    _logoFadeAnimation = Tween<double>(
+    // Bar 3 animations (third bar - lean right)
+    _bar3SlideAnimation = Tween<Offset>(
+      begin: const Offset(2.0, -4.0),
+      end: const Offset(0.5, 0.0),
+    ).animate(CurvedAnimation(
+      parent: _barsController,
+      curve: const Interval(0.2, 0.8, curve: Curves.elasticOut),
+    ));
+
+    _bar3ScaleAnimation = Tween<double>(
+      begin: 0.3,
+      end: 1.0,
+    ).animate(CurvedAnimation(
+      parent: _barsController,
+      curve: const Interval(0.2, 0.7, curve: Curves.bounceOut),
+    ));
+
+    _bar3RotationAnimation = Tween<double>(
+      begin: -0.6,
+      end: 0.15, // Lean right (15 degrees)
+    ).animate(CurvedAnimation(
+      parent: _barsController,
+      curve: const Interval(0.4, 0.9, curve: Curves.elasticOut),
+    ));
+
+    // Bar 4 animations (rightmost bar - lean left)
+    _bar4SlideAnimation = Tween<Offset>(
+      begin: const Offset(4.0, -2.0),
+      end: const Offset(1.5, 0.0),
+    ).animate(CurvedAnimation(
+      parent: _barsController,
+      curve: const Interval(0.3, 0.9, curve: Curves.elasticOut),
+    ));
+
+    _bar4ScaleAnimation = Tween<double>(
+      begin: 0.3,
+      end: 1.0,
+    ).animate(CurvedAnimation(
+      parent: _barsController,
+      curve: const Interval(0.3, 0.8, curve: Curves.bounceOut),
+    ));
+
+    _bar4RotationAnimation = Tween<double>(
+      begin: 0.6,
+      end: -0.15, // Lean left (-15 degrees)
+    ).animate(CurvedAnimation(
+      parent: _barsController,
+      curve: const Interval(0.5, 1.0, curve: Curves.elasticOut),
+    ));
+
+    // Floating animation for continuous subtle movement
+    _floatingAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
     ).animate(CurvedAnimation(
-      parent: _logoController,
-      curve: const Interval(0.0, 0.6, curve: Curves.easeInOut),
+      parent: _floatingController,
+      curve: Curves.easeInOut,
     ));
 
     // Text animations
@@ -147,19 +231,19 @@ class _SplashScreenState extends State<SplashScreen>
     await Future.delayed(const Duration(milliseconds: 800));
     FlutterNativeSplash.remove();
 
-    // Start logo parts animation
-    _logoPartsController.forward();
+    // Start bars animation
+    _barsController.forward();
 
-    // Start main logo animation with slight delay
-    await Future.delayed(const Duration(milliseconds: 400));
-    _logoController.forward();
+    // Start floating animation and repeat
+    await Future.delayed(const Duration(milliseconds: 2000));
+    _floatingController.repeat(reverse: true);
 
     // Start text animation
-    await Future.delayed(const Duration(milliseconds: 600));
+    await Future.delayed(const Duration(milliseconds: 500));
     _textController.forward();
 
     // Start progress animation
-    await Future.delayed(const Duration(milliseconds: 800));
+    await Future.delayed(const Duration(milliseconds: 300));
     _progressController.forward();
 
     // Initialize app
@@ -193,77 +277,123 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
-    _logoController.dispose();
+    _barsController.dispose();
     _textController.dispose();
     _progressController.dispose();
-    _logoPartsController.dispose();
+    _floatingController.dispose();
     super.dispose();
   }
 
-  Widget _buildAnimatedMegaLogo() {
-    return SizedBox(
-      width: 140.w,
-      height: 140.h,
-      child: AnimatedBuilder(
-        animation: _logoRotationAnimation,
-        builder: (context, child) {
-          return Transform.rotate(
-            angle: _logoRotationAnimation.value * 0.1, // Subtle rotation
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                // Left part of the M
-                AnimatedBuilder(
-                  animation: _leftPartAnimation,
-                  builder: (context, child) {
-                    return Transform.translate(
-                      offset: Offset(
-                        _leftPartAnimation.value.dx * 50,
-                        _leftPartAnimation.value.dy * 50,
+  Widget _buildSingleBar({
+    required Animation<Offset> slideAnimation,
+    required Animation<double> scaleAnimation,
+    required Animation<double> rotationAnimation,
+    required double floatingOffset,
+    required double zIndex,
+  }) {
+    return AnimatedBuilder(
+      animation: Listenable.merge([
+        slideAnimation,
+        scaleAnimation,
+        rotationAnimation,
+        _barsOpacityAnimation,
+        _floatingAnimation,
+      ]),
+      builder: (context, child) {
+        return Transform.translate(
+          offset: Offset(
+            slideAnimation.value.dx * 40.w + (floatingOffset * _floatingAnimation.value * 2),
+            slideAnimation.value.dy * 40.h + (Math.sin(_floatingAnimation.value * 2 * 3.14159 + floatingOffset) * 1.5),
+          ),
+          child: Transform.scale(
+            scale: scaleAnimation.value,
+            child: Transform.rotate(
+              angle: rotationAnimation.value,
+              child: Opacity(
+                opacity: _barsOpacityAnimation.value * (0.7 + (zIndex * 0.1)), // Depth effect
+                child: Container(
+                  width: 35.w,
+                  height: 130.h,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.3 - (zIndex * 0.05)),
+                        blurRadius: 15 - (zIndex * 2),
+                        offset: Offset(zIndex * 2, 8 - (zIndex * 1)),
                       ),
-                      child: CustomPaint(
-                        size: Size(140.w, 140.h),
-                        painter: MegaLogoLeftPainter(),
+                      BoxShadow(
+                        color: Colors.white.withValues(alpha: 0.1),
+                        blurRadius: 8,
+                        offset: const Offset(0, -3),
                       ),
-                    );
-                  },
+                    ],
+                  ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.r),
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.white.withValues(alpha: 0.4),
+                          Colors.white.withValues(alpha: 0.1),
+                          Colors.black.withValues(alpha: 0.1),
+                        ],
+                        stops: const [0.0, 0.6, 1.0],
+                      ),
+                    ),
+                  ),
                 ),
-                // Right part of the M
-                AnimatedBuilder(
-                  animation: _rightPartAnimation,
-                  builder: (context, child) {
-                    return Transform.translate(
-                      offset: Offset(
-                        _rightPartAnimation.value.dx * 50,
-                        _rightPartAnimation.value.dy * 50,
-                      ),
-                      child: CustomPaint(
-                        size: Size(140.w, 140.h),
-                        painter: MegaLogoRightPainter(),
-                      ),
-                    );
-                  },
-                ),
-                // Center part
-                AnimatedBuilder(
-                  animation: _centerPartAnimation,
-                  builder: (context, child) {
-                    return Transform.translate(
-                      offset: Offset(
-                        _centerPartAnimation.value.dx * 50,
-                        _centerPartAnimation.value.dy * 50,
-                      ),
-                      child: CustomPaint(
-                        size: Size(140.w, 140.h),
-                        painter: MegaLogoCenterPainter(),
-                      ),
-                    );
-                  },
-                ),
-              ],
+              ),
             ),
-          );
-        },
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildAnimatedBars() {
+    return SizedBox(
+      width: 280.w,
+      height: 200.h,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Bar 1 (leftmost bar - lean right) - Behind all others
+          _buildSingleBar(
+            slideAnimation: _bar1SlideAnimation,
+            scaleAnimation: _bar1ScaleAnimation,
+            rotationAnimation: _bar1RotationAnimation,
+            floatingOffset: 1.0,
+            zIndex: 3.0, // Furthest back
+          ),
+          // Bar 2 (second bar - lean left)
+          _buildSingleBar(
+            slideAnimation: _bar2SlideAnimation,
+            scaleAnimation: _bar2ScaleAnimation,
+            rotationAnimation: _bar2RotationAnimation,
+            floatingOffset: -0.8,
+            zIndex: 2.0,
+          ),
+          // Bar 3 (third bar - lean right)
+          _buildSingleBar(
+            slideAnimation: _bar3SlideAnimation,
+            scaleAnimation: _bar3ScaleAnimation,
+            rotationAnimation: _bar3RotationAnimation,
+            floatingOffset: -1.2,
+            zIndex: 1.0,
+          ),
+          // Bar 4 (rightmost bar - lean left) - In front
+          _buildSingleBar(
+            slideAnimation: _bar4SlideAnimation,
+            scaleAnimation: _bar4ScaleAnimation,
+            rotationAnimation: _bar4RotationAnimation,
+            floatingOffset: 0.6,
+            zIndex: 0.0, // Closest to front
+          ),
+        ],
       ),
     );
   }
@@ -282,33 +412,8 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // Animated MEGA Logo
-                    AnimatedBuilder(
-                      animation: Listenable.merge([
-                        _logoScaleAnimation,
-                        _logoFadeAnimation,
-                      ]),
-                      builder: (context, child) {
-                        return Transform.scale(
-                          scale: _logoScaleAnimation.value,
-                          child: FadeTransition(
-                            opacity: _logoFadeAnimation,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withValues(alpha: 0.2),
-                                    blurRadius: 20,
-                                    offset: const Offset(0, 10),
-                                  ),
-                                ],
-                              ),
-                              child: _buildAnimatedMegaLogo(),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
+                    // Animated Four Bars
+                    _buildAnimatedBars(),
 
                     SizedBox(height: 50.h),
 
@@ -325,7 +430,7 @@ class _SplashScreenState extends State<SplashScreen>
                             opacity: _textFadeAnimation,
                             child: Text(
                               'MEGA',
-                              style: AppTextStyles.megaSplash
+                              style: AppTextStyles.megaSplash,
                             ),
                           ),
                         );
@@ -361,7 +466,7 @@ class _SplashScreenState extends State<SplashScreen>
                         opacity: _textFadeAnimation,
                         child: Text(
                           'Initializing MEGA...',
-                          style: AppTextStyles.loadingSplash
+                          style: AppTextStyles.loadingSplash,
                         ),
                       ),
                     ],
@@ -374,84 +479,4 @@ class _SplashScreenState extends State<SplashScreen>
       ),
     );
   }
-}
-
-// Custom painters for MEGA logo parts
-class MegaLogoLeftPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.white
-      ..style = PaintingStyle.fill;
-
-    final path = Path();
-    final center = Offset(size.width / 2, size.height / 2);
-    final w = size.width * 0.3;
-    final h = size.height * 0.4;
-
-    // Left part of M shape
-    path.moveTo(center.dx - w, center.dy - h);
-    path.lineTo(center.dx - w/2, center.dy - h);
-    path.lineTo(center.dx - w/4, center.dy);
-    path.lineTo(center.dx - w/2, center.dy + h);
-    path.lineTo(center.dx - w, center.dy + h);
-    path.close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
-
-class MegaLogoRightPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.white
-      ..style = PaintingStyle.fill;
-
-    final path = Path();
-    final center = Offset(size.width / 2, size.height / 2);
-    final w = size.width * 0.3;
-    final h = size.height * 0.4;
-
-    // Right part of M shape
-    path.moveTo(center.dx + w, center.dy - h);
-    path.lineTo(center.dx + w, center.dy + h);
-    path.lineTo(center.dx + w/2, center.dy + h);
-    path.lineTo(center.dx + w/4, center.dy);
-    path.lineTo(center.dx + w/2, center.dy - h);
-    path.close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
-
-class MegaLogoCenterPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.white
-      ..style = PaintingStyle.fill;
-
-    final path = Path();
-    final center = Offset(size.width / 2, size.height / 2);
-    final w = size.width * 0.15;
-    final h = size.height * 0.4;
-
-    // Center part of M
-    path.moveTo(center.dx - w/2, center.dy - h);
-    path.lineTo(center.dx + w/2, center.dy - h);
-    path.lineTo(center.dx, center.dy - h/3);
-    path.close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
