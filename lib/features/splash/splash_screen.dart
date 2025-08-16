@@ -1,4 +1,5 @@
 import 'dart:math' as Math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -72,122 +73,137 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     // Bars opacity
-    _barsOpacityAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.0, 0.3, curve: Curves.easeInOut),
-    ));
+    _barsOpacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _barsController,
+        curve: const Interval(0.0, 0.3, curve: Curves.easeInOut),
+      ),
+    );
 
     // Bar 1 animations (leftmost bar - lean right)
-    _bar1SlideAnimation = Tween<Offset>(
-      begin: const Offset(-4.0, -2.0),
-      end: const Offset(-1.5, 0.0),
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.0, 0.6, curve: Curves.elasticOut),
-    ));
+    _bar1SlideAnimation =
+        Tween<Offset>(
+          begin: const Offset(-4.0, -2.0),
+          end: const Offset(-1.5, 0.0),
+        ).animate(
+          CurvedAnimation(
+            parent: _barsController,
+            curve: const Interval(0.0, 0.6, curve: Curves.elasticOut),
+          ),
+        );
 
-    _bar1ScaleAnimation = Tween<double>(
-      begin: 0.3,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.0, 0.5, curve: Curves.bounceOut),
-    ));
+    _bar1ScaleAnimation = Tween<double>(begin: 0.3, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _barsController,
+        curve: const Interval(0.0, 0.5, curve: Curves.bounceOut),
+      ),
+    );
 
-    _bar1RotationAnimation = Tween<double>(
-      begin: -0.8,
-      end: 0.15, // Lean right (15 degrees)
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.2, 0.7, curve: Curves.elasticOut),
-    ));
+    _bar1RotationAnimation =
+        Tween<double>(
+          begin: -0.8,
+          end: 0.15, // Lean right (15 degrees)
+        ).animate(
+          CurvedAnimation(
+            parent: _barsController,
+            curve: const Interval(0.2, 0.7, curve: Curves.elasticOut),
+          ),
+        );
 
     // Bar 2 animations (second bar - lean left)
-    _bar2SlideAnimation = Tween<Offset>(
-      begin: const Offset(-2.0, -4.0),
-      end: const Offset(-0.5, 0.0),
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.1, 0.7, curve: Curves.elasticOut),
-    ));
+    _bar2SlideAnimation =
+        Tween<Offset>(
+          begin: const Offset(-2.0, -4.0),
+          end: const Offset(-0.5, 0.0),
+        ).animate(
+          CurvedAnimation(
+            parent: _barsController,
+            curve: const Interval(0.1, 0.7, curve: Curves.elasticOut),
+          ),
+        );
 
-    _bar2ScaleAnimation = Tween<double>(
-      begin: 0.3,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.1, 0.6, curve: Curves.bounceOut),
-    ));
+    _bar2ScaleAnimation = Tween<double>(begin: 0.3, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _barsController,
+        curve: const Interval(0.1, 0.6, curve: Curves.bounceOut),
+      ),
+    );
 
-    _bar2RotationAnimation = Tween<double>(
-      begin: 0.8,
-      end: -0.15, // Lean left (-15 degrees)
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.3, 0.8, curve: Curves.elasticOut),
-    ));
+    _bar2RotationAnimation =
+        Tween<double>(
+          begin: 0.8,
+          end: -0.15, // Lean left (-15 degrees)
+        ).animate(
+          CurvedAnimation(
+            parent: _barsController,
+            curve: const Interval(0.3, 0.8, curve: Curves.elasticOut),
+          ),
+        );
 
     // Bar 3 animations (third bar - lean right)
-    _bar3SlideAnimation = Tween<Offset>(
-      begin: const Offset(2.0, -4.0),
-      end: const Offset(0.5, 0.0),
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.2, 0.8, curve: Curves.elasticOut),
-    ));
+    _bar3SlideAnimation =
+        Tween<Offset>(
+          begin: const Offset(2.0, -4.0),
+          end: const Offset(0.5, 0.0),
+        ).animate(
+          CurvedAnimation(
+            parent: _barsController,
+            curve: const Interval(0.2, 0.8, curve: Curves.elasticOut),
+          ),
+        );
 
-    _bar3ScaleAnimation = Tween<double>(
-      begin: 0.3,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.2, 0.7, curve: Curves.bounceOut),
-    ));
+    _bar3ScaleAnimation = Tween<double>(begin: 0.3, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _barsController,
+        curve: const Interval(0.2, 0.7, curve: Curves.bounceOut),
+      ),
+    );
 
-    _bar3RotationAnimation = Tween<double>(
-      begin: -0.6,
-      end: 0.15, // Lean right (15 degrees)
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.4, 0.9, curve: Curves.elasticOut),
-    ));
+    _bar3RotationAnimation =
+        Tween<double>(
+          begin: -0.6,
+          end: 0.15, // Lean right (15 degrees)
+        ).animate(
+          CurvedAnimation(
+            parent: _barsController,
+            curve: const Interval(0.4, 0.9, curve: Curves.elasticOut),
+          ),
+        );
 
     // Bar 4 animations (rightmost bar - lean left)
-    _bar4SlideAnimation = Tween<Offset>(
-      begin: const Offset(4.0, -2.0),
-      end: const Offset(1.5, 0.0),
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.3, 0.9, curve: Curves.elasticOut),
-    ));
+    _bar4SlideAnimation =
+        Tween<Offset>(
+          begin: const Offset(4.0, -2.0),
+          end: const Offset(1.5, 0.0),
+        ).animate(
+          CurvedAnimation(
+            parent: _barsController,
+            curve: const Interval(0.3, 0.9, curve: Curves.elasticOut),
+          ),
+        );
 
-    _bar4ScaleAnimation = Tween<double>(
-      begin: 0.3,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.3, 0.8, curve: Curves.bounceOut),
-    ));
+    _bar4ScaleAnimation = Tween<double>(begin: 0.3, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _barsController,
+        curve: const Interval(0.3, 0.8, curve: Curves.bounceOut),
+      ),
+    );
 
-    _bar4RotationAnimation = Tween<double>(
-      begin: 0.6,
-      end: -0.15, // Lean left (-15 degrees)
-    ).animate(CurvedAnimation(
-      parent: _barsController,
-      curve: const Interval(0.5, 1.0, curve: Curves.elasticOut),
-    ));
+    _bar4RotationAnimation =
+        Tween<double>(
+          begin: 0.6,
+          end: -0.15, // Lean left (-15 degrees)
+        ).animate(
+          CurvedAnimation(
+            parent: _barsController,
+            curve: const Interval(0.5, 1.0, curve: Curves.elasticOut),
+          ),
+        );
 
     // Floating animation for continuous subtle movement
-    _floatingAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _floatingController,
-      curve: Curves.easeInOut,
-    ));
+    _floatingAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: _floatingController, curve: Curves.easeInOut),
+    );
 
     // Text animations
     _textController = AnimationController(
@@ -195,21 +211,14 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
     );
 
-    _textSlideAnimation = Tween<Offset>(
-      begin: const Offset(0, 0.3),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _textController,
-      curve: Curves.easeOutBack,
-    ));
+    _textSlideAnimation =
+        Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero).animate(
+          CurvedAnimation(parent: _textController, curve: Curves.easeOutBack),
+        );
 
-    _textFadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _textController,
-      curve: Curves.easeInOut,
-    ));
+    _textFadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: _textController, curve: Curves.easeInOut),
+    );
 
     // Progress animation
     _progressController = AnimationController(
@@ -217,13 +226,9 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
     );
 
-    _progressAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _progressController,
-      curve: Curves.easeInOut,
-    ));
+    _progressAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: _progressController, curve: Curves.easeInOut),
+    );
   }
 
   void _startSplashSequence() async {
@@ -254,7 +259,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     // Navigate to home screen
     if (mounted) {
-      context.pushReplacementNamed(Routes.homeScreen);
+      context.pushReplacementNamed(Routes.signupScreen);
     }
   }
 
@@ -302,15 +307,21 @@ class _SplashScreenState extends State<SplashScreen>
       builder: (context, child) {
         return Transform.translate(
           offset: Offset(
-            slideAnimation.value.dx * 40.w + (floatingOffset * _floatingAnimation.value * 2),
-            slideAnimation.value.dy * 40.h + (Math.sin(_floatingAnimation.value * 2 * 3.14159 + floatingOffset) * 1.5),
+            slideAnimation.value.dx * 40.w +
+                (floatingOffset * _floatingAnimation.value * 2),
+            slideAnimation.value.dy * 40.h +
+                (Math.sin(
+                      _floatingAnimation.value * 2 * 3.14159 + floatingOffset,
+                    ) *
+                    1.5),
           ),
           child: Transform.scale(
             scale: scaleAnimation.value,
             child: Transform.rotate(
               angle: rotationAnimation.value,
               child: Opacity(
-                opacity: _barsOpacityAnimation.value * (0.7 + (zIndex * 0.1)), // Depth effect
+                opacity: _barsOpacityAnimation.value * (0.7 + (zIndex * 0.1)),
+                // Depth effect
                 child: Container(
                   width: 35.w,
                   height: 130.h,
@@ -319,7 +330,9 @@ class _SplashScreenState extends State<SplashScreen>
                     borderRadius: BorderRadius.circular(8.r),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.3 - (zIndex * 0.05)),
+                        color: Colors.black.withValues(
+                          alpha: 0.3 - (zIndex * 0.05),
+                        ),
                         blurRadius: 15 - (zIndex * 2),
                         offset: Offset(zIndex * 2, 8 - (zIndex * 1)),
                       ),
