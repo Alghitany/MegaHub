@@ -22,7 +22,6 @@ mixin _$ApiResult<T> {
     required TResult Function(T data) success,
     required TResult Function(ApiErrorModel apiErrorModel) failure,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T data)? success,
@@ -31,18 +30,14 @@ mixin _$ApiResult<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T data)? success,
-
     TResult Function(ApiErrorModel apiErrorModel)? failure,
-
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Success<T> value) success,
     required TResult Function(Failure<T> value) failure,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Success<T> value)? success,
