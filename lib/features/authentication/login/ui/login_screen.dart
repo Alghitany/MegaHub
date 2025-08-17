@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_hub/features/authentication/login/ui/widget/login_form.dart';
 import '../../../../core/helpers/spacing.dart';
@@ -8,6 +9,7 @@ import '../../../../core/widget/app_text_button.dart';
 import '../../../../core/widget/auth_other_methods.dart';
 import '../../../../core/widget/auth_switch.dart';
 import '../../../../core/widget/forget_password_text.dart';
+import '../logic/login_cubit.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -75,3 +77,11 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+
+
+void validateThenDoLogin(BuildContext context) {
+  if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+    context.read<LoginCubit>().emitLoginStates();
+  }
+}
+
