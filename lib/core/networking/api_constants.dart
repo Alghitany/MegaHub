@@ -1,6 +1,8 @@
 class ApiConstants {
   static const String apiBaseUrl = "http://megahubproject.runasp.net/api/";
   static const String signup = "Auth/register";
+  static const String login = "/Auth/Login";
+
 }
 
 class ApiErrors {

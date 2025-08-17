@@ -24,7 +24,6 @@ mixin _$SignupState<T> {
     required TResult Function(T data) signupSuccess,
     required TResult Function(ApiErrorModel apiErrorModel) signupError,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -35,16 +34,11 @@ mixin _$SignupState<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-
     TResult Function()? signupLoading,
-
     TResult Function(T data)? signupSuccess,
-
     TResult Function(ApiErrorModel apiErrorModel)? signupError,
-
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
@@ -52,7 +46,6 @@ mixin _$SignupState<T> {
     required TResult Function(SignupSuccess<T> value) signupSuccess,
     required TResult Function(SignupError<T> value) signupError,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
