@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_hub/features/authentication/login/ui/widget/login_bloc_listener.dart';
 import 'package:mega_hub/features/authentication/login/ui/widget/login_form.dart';
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
@@ -44,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   const AuthSwitch(isSignup: false),
                   verticalSpace(16),
-                  loginform(),
+                  LoginForm(),
                   verticalSpace(8),
                   Align(
                     alignment: Alignment.centerRight,
@@ -54,6 +55,7 @@ class LoginScreen extends StatelessWidget {
                   AppTextButton(
                     buttonText: "Login",
                     onPressed: () {
+                      validateThenDoLogin(context);
                     },
                   ),verticalSpace(16),
                   Text(
@@ -65,9 +67,7 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     child: AuthOtherMethods(),
                   ),
-
-
-
+                  LoginBlocListener()
                 ],
               ),
             ),
