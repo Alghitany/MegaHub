@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "876639432571",
+    "project_id": "megahub-95b3c",
+    "storage_bucket": "megahub-95b3c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876639432571:android:554df8a9ca9f8f1b6d97de",
+        "android_client_info": {
+          "package_name": "com.example.mega_hub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_OQriUQ4z-B2ZAFLf0Zz7RUmCi6rtHd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
