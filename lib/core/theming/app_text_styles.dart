@@ -52,4 +52,10 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.medium,
     color: AppColors.appMainColor,
   );
+  static final TextStyle listtiletitlestyle = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+
+  );
+
 }
