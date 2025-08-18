@@ -18,7 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Future<void> _pickImage() async {
     final pickedFile = await _picker.pickImage(
-      source: ImageSource.gallery, // أو ImageSource.camera
+      source: ImageSource.gallery,
     );
 
     if (pickedFile != null) {
@@ -40,7 +40,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             radius: 50,
             backgroundImage: _imageFile != null
                 ? FileImage(_imageFile!)
-                : AssetImage("assets/user.jpg") as ImageProvider,
+                : AssetImage("") ,
             child: Align(
               alignment: Alignment.bottomRight,
               child: Icon(Icons.edit, size: 20, color: Colors.black),
