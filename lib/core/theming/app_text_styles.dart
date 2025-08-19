@@ -52,4 +52,14 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.medium,
     color: AppColors.appMainColor,
   );
+  static final TextStyle font24plusJakartaSansBoldBlack = TextStyle(
+    fontSize: 24.sp,
+    fontFamily: "PlusJakartaSans",
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+  static final TextStyle listTileTitleStyle = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+  );
 }

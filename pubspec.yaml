@@ -66,6 +66,7 @@ dependencies:
   flutter_secure_storage: ^9.2.4
   # Provides an easy way to add shimmer effect
   shimmer: ^3.0.0
+  image_picker: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -121,6 +122,8 @@ flutter:
   #         style: italic
     - family: PlusJakartaSans
       fonts:
+        - asset: assets/fonts/plusJakartaSans_bold.ttf
+          weight: 700
         - asset: assets/fonts/plusJakartaSans_medium.ttf
           weight: 500
   #   - family: Trajan Pro
