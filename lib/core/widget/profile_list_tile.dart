@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mega_hub/core/theming/app_text_styles.dart';
 
 class CustomListTile extends StatelessWidget {
   final String title;
@@ -19,9 +20,11 @@ class CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      titleTextStyle:titleTextStyle ,
       leading: leading,
-      title: Text(title),
+      title: Text(
+        title,
+        style: titleTextStyle ?? AppTextStyles.listTileTitleStyle,
+      ),
       trailing: trailing,
       onTap: onTap,
     );

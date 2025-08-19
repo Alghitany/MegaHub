@@ -122,6 +122,8 @@ flutter:
   #         style: italic
     - family: PlusJakartaSans
       fonts:
+        - asset: assets/fonts/plusJakartaSans_bold.ttf
+          weight: 700
         - asset: assets/fonts/plusJakartaSans_medium.ttf
           weight: 500
   #   - family: Trajan Pro
