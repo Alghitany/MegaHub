@@ -62,4 +62,28 @@ class AppTextStyles {
     fontSize: 16.sp,
     fontWeight: FontWeight.w600,
   );
+  static final TextStyle font16plusJakartaSansExtraBoldLavaRed = TextStyle(
+    fontSize: 16.sp,
+    fontFamily: "PlusJakartaSans",
+    fontWeight: FontWeightHelper.extraBold,
+    color: AppColors.appMainColor,
+  );
+  static final TextStyle font12plusJakartaSansRegularCarbonGrey = TextStyle(
+    fontSize: 12.sp,
+    fontFamily: "PlusJakartaSans",
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.carbonGrey,
+  );
+  static final TextStyle font16plusJakartaSansMediumWhite = TextStyle(
+    fontSize: 16.sp,
+    fontFamily: "PlusJakartaSans",
+    fontWeight: FontWeightHelper.medium,
+    color: Colors.white,
+  );
+  static final TextStyle font12plusJakartaSansSemiBoldBalticSea = TextStyle(
+    fontSize: 12.sp,
+    fontFamily: "PlusJakartaSans",
+    fontWeight: FontWeightHelper.semiBold,
+    color: AppColors.balticSea,
+  );
 }
