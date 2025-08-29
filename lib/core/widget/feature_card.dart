@@ -28,7 +28,7 @@ class FeatureCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 35, width: 35, child: icon), // ✅ تم تعديل عرض الأيقونة SVG
+          SizedBox(height: 35, width: 35, child: icon),
           const SizedBox(height: 6),
           if (!isMotivation)
             Text(
