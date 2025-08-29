@@ -4,10 +4,10 @@ import 'package:mega_hub/core/helpers/extensions.dart';
 import 'package:mega_hub/core/theming/app_colors.dart';
 import 'package:mega_hub/core/theming/app_text_styles.dart';
 import 'package:mega_hub/features/authentication/login/logic/login_state.dart';
+
 import '../../../../../core/networking/api_error_model.dart';
 import '../../../../../core/routing/routes.dart';
 import '../../logic/login_cubit.dart';
-
 
 class LoginBlocListener extends StatelessWidget {
   const LoginBlocListener({super.key});
@@ -16,7 +16,7 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-      current is LoginLoading ||
+          current is LoginLoading ||
           current is LoginSuccess ||
           current is LoginError,
       listener: (context, state) {

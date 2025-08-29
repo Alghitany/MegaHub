@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_hub/core/helpers/spacing.dart';
 import 'package:mega_hub/core/widget/app_text_form_field.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../../core/widget/session_card.dart';
+
+import '../../../core/widget/app_bottom_navigation_bar.dart';
 import 'widgets/achievements_and_motivation_corner.dart';
 import 'widgets/explore_and_grow.dart';
 import 'widgets/home_event_card.dart';
@@ -19,10 +19,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const AppBottomNavigationBar(selectedIndex: 0),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),

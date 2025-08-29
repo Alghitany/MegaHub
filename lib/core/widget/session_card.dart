@@ -23,7 +23,7 @@ class SessionCard extends StatelessWidget {
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min, // 👈 keeps column compact
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'CV writing session',
@@ -34,10 +34,7 @@ class SessionCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 8.h),
-                Text(
-                  '1/8/2025',
-                  style: TextStyle(fontSize: 14.sp),
-                ),
+                Text('1/8/2025', style: TextStyle(fontSize: 14.sp)),
                 SizedBox(height: 8.h),
                 ElevatedButton(
                   onPressed: () {},
@@ -47,12 +44,13 @@ class SessionCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.r),
                     ),
                     padding: EdgeInsets.symmetric(
-                        horizontal: 16.w, vertical: 6.h),
+                      horizontal: 16.w,
+                      vertical: 6.h,
+                    ),
                   ),
                   child: Text(
                     'Book Now!',
-                    style:
-                    TextStyle(fontSize: 12.sp, color: Colors.white),
+                    style: TextStyle(fontSize: 12.sp, color: Colors.white),
                   ),
                 ),
               ],

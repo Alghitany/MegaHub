@@ -9,11 +9,7 @@ class ActionButton extends StatelessWidget {
   final String label;
   final SvgPicture icon;
 
-  const ActionButton({
-    super.key,
-    required this.label,
-    required this.icon,
-  });
+  const ActionButton({super.key, required this.label, required this.icon});
 
   @override
   Widget build(BuildContext context) {

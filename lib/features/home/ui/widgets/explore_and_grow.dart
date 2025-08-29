@@ -15,9 +15,7 @@ class ExploreAndGrow extends StatelessWidget {
       children: [
         Text(
           "Explore & Grow",
-          style: TextStyle(
-              fontSize: 20.sp,
-              fontWeight: FontWeight.w800),
+          style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w800),
         ),
         verticalSpace(8),
         Row(

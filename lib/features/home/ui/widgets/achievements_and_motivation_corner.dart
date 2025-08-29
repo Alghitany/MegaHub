@@ -42,7 +42,7 @@ class AchievementsAndMotivationCorner extends StatelessWidget {
         Expanded(
           child: Container(
             height: 120.h,
-            padding: EdgeInsets.symmetric(vertical: 8.h,horizontal: 8.w),
+            padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 8.w),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.r),
               border: Border.all(color: AppColors.appMainColor, width: 1.w),

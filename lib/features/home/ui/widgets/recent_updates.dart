@@ -18,8 +18,7 @@ class _RecentUpdatesState extends State<RecentUpdates> {
   @override
   void initState() {
     super.initState();
-    // viewportFraction < 1.0 makes next card partially visible
-    _pageController = PageController(viewportFraction: 0.8);
+    _pageController = PageController(viewportFraction: 0.85);
   }
 
   @override
@@ -37,18 +36,21 @@ class _RecentUpdatesState extends State<RecentUpdates> {
           "Recent Updates",
           style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w800),
         ),
-        verticalSpace(12),
+        verticalSpace(8),
         SizedBox(
-          height: 150.h, // 👈 give extra room
+          height: 150.h,
           child: PageView.builder(
             controller: _pageController,
             itemCount: 3,
+            padEnds: false,
             itemBuilder: (context, index) {
-              return SessionCard(); // 👈 no need for extra padding here
+              return Padding(
+                padding: EdgeInsets.only(right: 8.w),
+                child: const SessionCard(),
+              );
             },
           ),
         ),
-
         verticalSpace(10),
         Center(
           child: SmoothPageIndicator(

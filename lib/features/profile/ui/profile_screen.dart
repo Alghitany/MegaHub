@@ -5,6 +5,7 @@ import 'package:mega_hub/core/routing/routes.dart';
 import '../../../core/helpers/shared_pref_helper.dart';
 import '../../../core/networking/dio_factory.dart';
 import '../../../core/theming/app_colors.dart';
+import '../../../core/widget/app_bottom_navigation_bar.dart';
 import '../../../core/widget/profile_list_tile.dart';
 import 'widgets/profile_image_and_name.dart';
 
@@ -14,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const AppBottomNavigationBar(selectedIndex: 3),
       body: Column(
         children: [
           verticalSpace(64),
