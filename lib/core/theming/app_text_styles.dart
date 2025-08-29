@@ -74,8 +74,8 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
-  static final TextStyle RoadmapText=TextStyle(
-      fontSize: 25.sp,
+  static final TextStyle AchievmentsText=TextStyle(
+      fontSize: 20.sp,
       fontWeight: FontWeight.w600,
       color: Colors.black
   );
@@ -83,5 +83,21 @@ class AppTextStyles {
       color: AppColors.appMainColor,
       fontSize: 15.sp,
       fontWeight: FontWeight.w400);
+  static final TextStyle MegaEventTitle= TextStyle(
+    fontSize: 23,
+    fontWeight: FontWeight.w800,
+    color: AppColors.appMainColor,);
+
+  static final TextStyle MegaEventDescription=TextStyle(
+      fontSize: 10,
+      fontWeight: FontWeight.w400,
+      color: AppColors.AchievmentsTextColor);
+
+  static final TextStyle MegaEventButtonText=TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
+  );
+
 
 }

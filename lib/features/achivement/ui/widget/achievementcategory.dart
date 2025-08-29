@@ -11,7 +11,7 @@ class Roadmaps extends StatefulWidget {
 }
 
 class _RoadmapsState extends State<Roadmaps> {
-  final List<String> tracks = ["All", "UIUX", "Frontend", "Backend", "Fullstack","Flutter","Ai"];
+  final List<String> tracks = ["All", "Events", "Podcast", "challenges", "other",];
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -30,17 +30,17 @@ class _RoadmapsState extends State<Roadmaps> {
                 selectedIndex = index;
               });},
             child: Container(
-              height: 36.h,
+              height: 30.h,
               padding: EdgeInsets.symmetric(horizontal: 24.h,vertical: 10),
               decoration: BoxDecoration(
-                color: isSelected ? AppColors.appMainColor : AppColors.RoadMapColor,
+                color: isSelected ? AppColors.appMainColor : AppColors.AchievmentsColor,
                 borderRadius: BorderRadius.circular(25),
               ),
               alignment: Alignment.center,
               child: Text(
                 tracks[index],
                 style: TextStyle(
-                  color: isSelected ? Colors.white : AppColors.RoadMapTextColor,
+                  color: isSelected ? Colors.white : AppColors.AchievmentsTextColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),

@@ -18,7 +18,7 @@ class AchievementCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 155.h,
+      height: 140.h,
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
