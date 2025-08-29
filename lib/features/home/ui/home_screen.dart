@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mega_hub/core/helpers/extensions.dart';
 import 'package:mega_hub/core/routing/routes.dart';
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Icon(Icons.link),
                     SizedBox(width: 10),
                     Icon(Icons.notifications_active_outlined),],),],),
-                 SizedBox(height: 20),
+                 SizedBox(height: 20.h),
                 TextField(
                   decoration: InputDecoration(
                     hintText: "Hinted search text",

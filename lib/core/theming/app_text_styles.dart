@@ -62,4 +62,26 @@ class AppTextStyles {
     fontSize: 16.sp,
     fontWeight: FontWeight.w600,
   );
+
+  static final TextStyle achievementNumber = TextStyle(
+    fontSize: 66.sp,
+    fontWeight: FontWeight.w600,
+    color: AppColors.appMainColor,
+  );
+
+  static final TextStyle achievementText = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
+  static final TextStyle RoadmapText=TextStyle(
+      fontSize: 25.sp,
+      fontWeight: FontWeight.w600,
+      color: Colors.black
+  );
+  static final TextStyle SeeAllText=TextStyle(
+      color: AppColors.appMainColor,
+      fontSize: 15.sp,
+      fontWeight: FontWeight.w400);
+
 }
