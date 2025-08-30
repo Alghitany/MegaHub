@@ -24,7 +24,7 @@ class MegaHubApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         initialRoute: isLoggedInUser
-            ? Routes.showroomScreen
+            ? Routes.homeScreen
             : Routes.splashScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),

@@ -25,7 +25,7 @@ class HomeEventCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleAvatar(radius: 28.r, backgroundImage: AssetImage('')),
+                CircleAvatar(radius: 28.r, backgroundImage: AssetImage('assets/images/megaevent.png')),
                 horizontalSpace(12),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

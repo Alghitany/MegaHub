@@ -56,7 +56,7 @@ class EventsCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                CircleAvatar(radius: 35, backgroundImage: AssetImage("")),
+                CircleAvatar(radius: 30, backgroundImage: AssetImage(megaEvents.imageAsset)),
                 SizedBox(width: 12.w),
                 Expanded(
                   child: Text(
