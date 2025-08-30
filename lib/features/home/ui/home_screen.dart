@@ -7,9 +7,9 @@ import '../../../core/widget/app_bottom_navigation_bar.dart';
 import 'widgets/achievements_and_motivation_corner.dart';
 import 'widgets/explore_and_grow.dart';
 import 'widgets/home_event_card.dart';
-import 'widgets/home_top_bar.dart';
 import 'widgets/recent_updates.dart';
-import 'widgets/user_details_card.dart';
+import 'widgets/top_bar/home_top_bar_bloc_builder.dart';
+import 'widgets/user_details/user_details_card_bloc_builder.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HomeTopBar(),
+              HomeTopBarBlocBuilder(),
               verticalSpace(20),
               AppTextFormField(
                 hintText: "Hinted search text",
@@ -44,7 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               verticalSpace(8),
-              UserDetailsCard(),
+              UserDetailsCardBlocBuilder(),
               verticalSpace(24),
               ExploreAndGrow(),
               verticalSpace(20),

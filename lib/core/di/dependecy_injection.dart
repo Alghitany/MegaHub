@@ -5,6 +5,8 @@ import 'package:mega_hub/features/authentication/login/data/repo/login_repo.dart
 import '../../features/authentication/login/logic/login_cubit.dart';
 import '../../features/authentication/signup/data/repo/signup_repo.dart';
 import '../../features/authentication/signup/logic/signup_cubit.dart';
+import '../../features/home/data/apis/home_api_service.dart';
+import '../../features/home/data/repos/home_repo.dart';
 import '../networking/api_service.dart';
 import '../networking/dio_factory.dart';
 
@@ -20,4 +22,7 @@ Future<void> setupGetIt() async {
   //login
   getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
   getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+  //home
+  getIt.registerLazySingleton<HomeApiService>(() => HomeApiService(dio));
+  getIt.registerLazySingleton<HomeRepo>(() => HomeRepo(getIt()));
 }

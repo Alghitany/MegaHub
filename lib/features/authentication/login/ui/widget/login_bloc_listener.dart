@@ -22,16 +22,16 @@ class LoginBlocListener extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           loginLoading: () {
-            showDialog(
-              context: context,
-              builder: (context) => const Center(
-                child: CircularProgressIndicator(color: AppColors.appMainColor),
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text("Logging in..."),
+                backgroundColor: AppColors.appMainColor,
+                duration: Duration(seconds: 1),
               ),
             );
           },
-          loginSuccess: (signupResponse) {
-            context.pop();
-            showSuccessDialog(context);
+          loginSuccess: (loginResponse) {
+            context.pushReplacementNamed(Routes.homeScreen);
           },
           loginError: (apiErrorModel) {
             setupErrorState(context, apiErrorModel);
@@ -42,58 +42,15 @@ class LoginBlocListener extends StatelessWidget {
     );
   }
 
-  void showSuccessDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Login Successful'),
-          content: const SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text('Congratulations, you have Login successfully!'),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.red,
-                disabledForegroundColor: Colors.grey.withOpacity(0.38),
-              ),
-              onPressed: () {
-                context.pushNamed(Routes.homeScreen);
-              },
-              child: const Text('Welcome To Home'),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
-    context.pop();
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        icon: const Icon(Icons.error, color: Colors.red, size: 32),
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
         content: Text(
           apiErrorModel.getAllErrorMessages(),
           style: AppTextStyles.font15InterMediumRedLava,
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              context.pop();
-            },
-            child: Text(
-              'Try Again',
-              style: AppTextStyles.font15InterMediumRedLava,
-            ),
-          ),
-        ],
+        backgroundColor: Colors.white,
+        behavior: SnackBarBehavior.floating,
       ),
     );
   }

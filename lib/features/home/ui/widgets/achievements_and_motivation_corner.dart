@@ -14,28 +14,34 @@ class AchievementsAndMotivationCorner extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Container(
-          width: 105.w,
-          height: 120.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(color: AppColors.appMainColor, width: 1.w),
-          ),
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                "assets/svgs/achievement.png",
-                height: 48.h,
-                width: 48.w,
-              ),
-              verticalSpace(8),
-              Text(
-                "Achievements",
-                style: AppTextStyles.font12plusJakartaSansSemiBoldBalticSea,
-              ),
-            ],
+        GestureDetector(
+          onTap: () {
+            //TODO: Add Navigation to achievements here..
+            //context.pushNamed(Routes.achievementsScreen);
+          },
+          child: Container(
+            width: 105.w,
+            height: 120.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(color: AppColors.appMainColor, width: 1.w),
+            ),
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/svgs/achievement.png",
+                  height: 48.h,
+                  width: 48.w,
+                ),
+                verticalSpace(8),
+                Text(
+                  "Achievements",
+                  style: AppTextStyles.font12plusJakartaSansSemiBoldBalticSea,
+                ),
+              ],
+            ),
           ),
         ),
         horizontalSpace(16),
