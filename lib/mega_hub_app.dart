@@ -23,7 +23,9 @@ class MegaHubApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: isLoggedInUser ? Routes.showroomScreen : Routes.splashScreen,
+        initialRoute: isLoggedInUser
+            ? Routes.showroomScreen
+            : Routes.splashScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

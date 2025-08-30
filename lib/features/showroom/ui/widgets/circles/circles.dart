@@ -104,7 +104,7 @@ class Circles extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text:
-                                "The Logistics Circle plays a crucial role in representing the team at various events and ensuring a strong team presence. They are responsible for managing the team's booth, showcasing",
+                                    "The Logistics Circle plays a crucial role in representing the team at various events and ensuring a strong team presence. They are responsible for managing the team's booth, showcasing",
                               ),
                               TextSpan(
                                 text: " more..",
@@ -151,8 +151,7 @@ class Circles extends StatelessWidget {
               ),
             ],
           ),
-        )
-
+        ),
       ],
     );
   }

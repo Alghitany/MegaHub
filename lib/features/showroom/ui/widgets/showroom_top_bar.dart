@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../achievement/ui/widget/searchbar.dart';
+import '../../../../core/widget/searchbar.dart';
 
 class ShowroomTopBar extends StatelessWidget {
   const ShowroomTopBar({super.key});

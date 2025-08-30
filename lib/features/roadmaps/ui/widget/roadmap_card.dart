@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../core/theming/app_colors.dart';
 
 class RoadmapCard extends StatelessWidget {
@@ -11,8 +12,8 @@ class RoadmapCard extends StatelessWidget {
 
   const RoadmapCard({
     Key? key,
-     this.svgpath,
-     this.imagepath,
+    this.svgpath,
+    this.imagepath,
     required this.Texttitle,
     required this.onPressed,
   }) : super(key: key);
@@ -27,7 +28,7 @@ class RoadmapCard extends StatelessWidget {
           border: Border.all(color: AppColors.appMainColor, width: 1),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 8.w),
+          padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 5.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -52,17 +53,13 @@ class RoadmapCard extends StatelessWidget {
                       Texttitle,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 11.sp,
+                        fontSize: 10.sp,
                         fontWeight: FontWeight.w800,
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(width: 5.w),
-                    Icon(
-                      Icons.arrow_forward,
-                      size: 9.sp,
-                      color: Colors.white,
-                    ),
+                    SizedBox(width: 4.w),
+                    Icon(Icons.arrow_forward, size: 10.sp, color: Colors.white),
                   ],
                 ),
               ),

@@ -136,13 +136,13 @@ class AppTextStyles {
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.regular,
     color: AppColors.darkJungleGreen,
-    fontFamily: "Inder"
+    fontFamily: "Inder",
   );
 
   static final TextStyle font24InderRegularLavaRed = TextStyle(
-      fontSize: 24.sp,
-      fontWeight: FontWeightHelper.regular,
-      color: AppColors.appMainColor,
-      fontFamily: "Inder"
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.appMainColor,
+    fontFamily: "Inder",
   );
 }

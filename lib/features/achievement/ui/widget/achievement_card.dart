@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_styles.dart';
 
@@ -15,6 +16,7 @@ class AchievementCard extends StatelessWidget {
     required this.text,
     required this.svgs,
   });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,22 +35,12 @@ class AchievementCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                  num,
-                  style: AppTextStyles.achievementNumber
-              ),
-              Text(
-                  text,
-                  style:AppTextStyles.achievementText
-              ),
+              Text(num, style: AppTextStyles.achievementNumber),
+              Text(text, style: AppTextStyles.achievementText),
             ],
           ),
           Flexible(
-            child: SvgPicture.asset(
-              svgs,
-              height: 120.h,
-              fit: BoxFit.contain,
-            ),
+            child: SvgPicture.asset(svgs, height: 120.h, fit: BoxFit.contain),
           ),
         ],
       ),

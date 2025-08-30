@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_hub/features/achievement/ui/widget/achievement_card.dart';
 import 'package:mega_hub/features/achievement/ui/widget/achievement_category.dart';
 import 'package:mega_hub/features/achievement/ui/widget/events.dart';
-import 'package:mega_hub/features/achievement/ui/widget/searchbar.dart';
 
 import '../../../core/theming/app_text_styles.dart';
+import '../../../core/widget/searchbar.dart';
 
 class AchievementScreen extends StatefulWidget {
   const AchievementScreen({super.key});
@@ -19,9 +19,9 @@ class _AchievementScreenState extends State<AchievementScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(15),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
