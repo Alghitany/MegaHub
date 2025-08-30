@@ -1,15 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:mega_hub/core/helpers/extensions.dart';
-import 'package:mega_hub/core/routing/routes.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../../core/theming/app_colors.dart';
-import '../../../core/widget/action_button.dart';
-import '../../../core/widget/feature_card.dart';
-import '../../../core/widget/session_card.dart';
-import '../../../core/widget/timer.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_hub/core/helpers/spacing.dart';
 import 'package:mega_hub/core/widget/app_text_form_field.dart';
 

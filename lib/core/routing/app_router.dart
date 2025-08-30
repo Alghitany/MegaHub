@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mega_hub/core/routing/routes.dart';
-import 'package:mega_hub/features/achivement/ui/achivement_screen.dart';
+import 'package:mega_hub/features/achivement/ui/achievement_screen.dart';
 import 'package:mega_hub/features/authentication/login/logic/login_cubit.dart';
 import 'package:mega_hub/features/authentication/login/ui/login_screen.dart';
 import 'package:mega_hub/features/authentication/signup/ui/signup_screen.dart';
@@ -20,7 +20,7 @@ class AppRouter {
 
     switch (settings.name) {
       case Routes.splashScreen:
-        return MaterialPageRoute(builder: (_) =>  HomeScreen());
+        return MaterialPageRoute(builder: (_) =>  SplashScreen());
       case Routes.signupScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -38,15 +38,14 @@ class AppRouter {
       case Routes.profileScreen:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) =>  HomeScreen());
-      case Routes.achievementScreen:
-        return MaterialPageRoute(builder: (_) => const AchivementScreen());
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => HomeCubit(getIt())..getUserDetails(),
             child: const HomeScreen(),
           ),
         );
+      case Routes.achievementScreen:
+        return MaterialPageRoute(builder: (_) => const AchievementScreen());
       case Routes.roadmapsScreen:
         return MaterialPageRoute(builder: (_) => RoadmapsScreen());
       case Routes.showroomScreen:
