@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
@@ -122,13 +123,15 @@ class _ProfileImageAndNameState extends State<ProfileImageAndName> {
             CircleAvatar(
               radius: 50.r,
               backgroundColor: AppColors.roseRed,
-              backgroundImage: _imageFile != null ? FileImage(_imageFile!) : null,
+              backgroundImage: _imageFile != null
+                  ? FileImage(_imageFile!)
+                  : null,
               child: _imageFile == null
                   ? Icon(
-                Icons.person_outline_rounded,
-                size: 70.r,
-                color: Colors.black54,
-              )
+                      Icons.person_outline_rounded,
+                      size: 70.r,
+                      color: Colors.black54,
+                    )
                   : null,
             ),
             Positioned(
@@ -142,26 +145,16 @@ class _ProfileImageAndNameState extends State<ProfileImageAndName> {
                   decoration: BoxDecoration(
                     color: Colors.red,
                     shape: BoxShape.circle,
-                    border: Border.all(
-                      color: Colors.white,
-                      width: 2.w,
-                    ),
+                    border: Border.all(color: Colors.white, width: 2.w),
                   ),
-                  child: const Icon(
-                    Icons.edit,
-                    color: Colors.white,
-                    size: 18,
-                  ),
+                  child: const Icon(Icons.edit, color: Colors.white, size: 18),
                 ),
               ),
             ),
           ],
         ),
         verticalSpace(24),
-        Text(
-          "User Name",
-          style: AppTextStyles.font24plusJakartaSansBoldBlack,
-        ),
+        Text("User Name", style: AppTextStyles.font24plusJakartaSansBoldBlack),
       ],
     );
   }

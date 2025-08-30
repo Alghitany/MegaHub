@@ -58,7 +58,7 @@ class _ApiService implements ApiService {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/Auth/login',
+            'Auth/Login',
             queryParameters: queryParameters,
             data: _data,
           )

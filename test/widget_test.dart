@@ -8,8 +8,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mega_hub/core/routing/app_router.dart';
-
-import 'package:mega_hub/main.dart';
 import 'package:mega_hub/mega_hub_app.dart';
 
 void main() {
