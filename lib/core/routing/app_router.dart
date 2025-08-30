@@ -6,6 +6,7 @@ import 'package:mega_hub/features/authentication/login/ui/login_screen.dart';
 import 'package:mega_hub/features/authentication/signup/ui/signup_screen.dart';
 import 'package:mega_hub/features/profile/ui/profile_screen.dart';
 
+import '../../features/achievement/ui/achievement_screen.dart';
 import '../../features/authentication/signup/logic/signup_cubit.dart';
 import '../../features/home/logic/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
@@ -20,7 +21,7 @@ class AppRouter {
 
     switch (settings.name) {
       case Routes.splashScreen:
-        return MaterialPageRoute(builder: (_) => const SplashScreen());
+        return MaterialPageRoute(builder: (_) => SplashScreen());
       case Routes.signupScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -44,8 +45,10 @@ class AppRouter {
             child: const HomeScreen(),
           ),
         );
+      case Routes.achievementScreen:
+        return MaterialPageRoute(builder: (_) => const AchievementScreen());
       case Routes.roadmapsScreen:
-        return MaterialPageRoute(builder: (_) => RoadmapsScreen());
+        return MaterialPageRoute(builder: (_) => RoadMapsScreen());
       case Routes.showroomScreen:
         return MaterialPageRoute(builder: (_) => ShowroomScreen());
       default:

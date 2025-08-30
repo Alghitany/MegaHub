@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mega_hub/core/helpers/extensions.dart';
 import 'package:mega_hub/core/helpers/spacing.dart';
 import 'package:mega_hub/core/theming/app_text_styles.dart';
 
+import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_colors.dart';
 
 class AchievementsAndMotivationCorner extends StatelessWidget {
@@ -16,8 +18,7 @@ class AchievementsAndMotivationCorner extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            //TODO: Add Navigation to achievements here..
-            //context.pushNamed(Routes.achievementsScreen);
+            context.pushNamed(Routes.achievementScreen);
           },
           child: Container(
             width: 105.w,

@@ -8,4 +8,8 @@ class AppColors {
   static const Color carbonGrey = Color(0xFF606060);
   static const Color balticSea = Color(0xFF282828);
   static const Color boulder = Color(0xFF757575);
+  static const Color cardColor = Color(0xFFFFDEDE);
+  static const Color achievementsColor = Color(0xFFEEEEEE);
+  static const Color achievementsTextColor = Color(0xFF818181);
+  static const Color darkJungleGreen = Color(0xFF1E1E1F);
 }
