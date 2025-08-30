@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_hub/core/helpers/spacing.dart';
 import 'package:mega_hub/core/widget/app_text_form_field.dart';
-
 import '../../../core/widget/app_bottom_navigation_bar.dart';
 import 'widgets/achievements_and_motivation_corner.dart';
 import 'widgets/explore_and_grow.dart';
