@@ -4,8 +4,8 @@ import 'package:mega_hub/features/roadmaps/ui/widget/roadmap_card.dart';
 import 'package:mega_hub/features/roadmaps/ui/widget/roadmaps_category.dart';
 import '../../../core/theming/app_colors.dart';
 import '../../../core/theming/app_text_styles.dart';
-import '../../achivement/ui/widget/achievementcard.dart';
-import '../../achivement/ui/widget/searchbar.dart';
+import '../../achievement/ui/widget/achievement_card.dart';
+import '../../achievement/ui/widget/searchbar.dart';
 
 class RoadMapsScreen extends StatelessWidget {
   const RoadMapsScreen({super.key});

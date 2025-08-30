@@ -11,7 +11,7 @@ class RoadmapsCategory extends StatefulWidget {
 }
 
 class _RoadmapsCategoryState extends State<RoadmapsCategory> {
-  final List<String> tracks = ["All", "UIUX", "Frontend", "Backend", "Flutter","Fullstack"];
+  final List<String> tracks = ["All", "UI/UX", "Frontend", "Backend", "Flutter","Fullstack"];
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -33,14 +33,14 @@ class _RoadmapsCategoryState extends State<RoadmapsCategory> {
               height: 25.h,
               padding: EdgeInsets.symmetric(horizontal: 20.h,vertical:8),
               decoration: BoxDecoration(
-                color: isSelected ? AppColors.appMainColor : AppColors.AchievmentsColor,
+                color: isSelected ? AppColors.appMainColor : AppColors.achievementsColor,
                 borderRadius: BorderRadius.circular(25),
               ),
               alignment: Alignment.center,
               child: Text(
                 tracks[index],
                 style: TextStyle(
-                  color: isSelected ? Colors.white : AppColors.AchievmentsTextColor,
+                  color: isSelected ? Colors.white : AppColors.achievementsTextColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),

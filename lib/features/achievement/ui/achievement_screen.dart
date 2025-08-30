@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mega_hub/features/achivement/ui/widget/achievementcard.dart';
-import 'package:mega_hub/features/achivement/ui/widget/achievementcategory.dart';
-import 'package:mega_hub/features/achivement/ui/widget/events.dart';
-import 'package:mega_hub/features/achivement/ui/widget/searchbar.dart';
+import 'package:mega_hub/features/achievement/ui/widget/achievement_card.dart';
+import 'package:mega_hub/features/achievement/ui/widget/achievement_category.dart';
+import 'package:mega_hub/features/achievement/ui/widget/events.dart';
+import 'package:mega_hub/features/achievement/ui/widget/searchbar.dart';
 
 import '../../../core/theming/app_text_styles.dart';
 
@@ -43,12 +43,12 @@ class _AchievementScreenState extends State<AchievementScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Achievments", style: AppTextStyles.AchievmentsText),
+                    Text("Achievements", style: AppTextStyles.AchievmentsText),
                     Text("See All", style: AppTextStyles.SeeAllText),
                   ],
                 ),
                 SizedBox(height: 10.h),
-                SizedBox(height: 39.h, child: Achievementcategory()),
+                SizedBox(height: 39.h, child: AchievementCategory()),
                 SizedBox(height: 24.h),
                 EventsCard(
                   megaEvents: MegaEvents(

@@ -74,6 +74,12 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.regular,
     color: AppColors.carbonGrey,
   );
+  static final TextStyle font11plusJakartaSansRegularCarbonGrey = TextStyle(
+    fontSize: 11.sp,
+    fontFamily: "PlusJakartaSans",
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.carbonGrey,
+  );
   static final TextStyle font16plusJakartaSansMediumWhite = TextStyle(
     fontSize: 16.sp,
     fontFamily: "PlusJakartaSans",
@@ -98,30 +104,45 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     color: Colors.black,
   );
-  static final TextStyle AchievmentsText=TextStyle(
-      fontSize: 20.sp,
-      fontWeight: FontWeight.w600,
-      color: Colors.black
+  static final TextStyle AchievmentsText = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
   );
-  static final TextStyle SeeAllText=TextStyle(
-      color: AppColors.appMainColor,
-      fontSize: 15.sp,
-      fontWeight: FontWeight.w400);
-  static final TextStyle MegaEventTitle= TextStyle(
+  static final TextStyle SeeAllText = TextStyle(
+    color: AppColors.appMainColor,
+    fontSize: 15.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static final TextStyle MegaEventTitle = TextStyle(
     fontSize: 23,
     fontWeight: FontWeight.w800,
-    color: AppColors.appMainColor,);
+    color: AppColors.appMainColor,
+  );
 
-  static final TextStyle MegaEventDescription=TextStyle(
-      fontSize: 10,
-      fontWeight: FontWeight.w400,
-      color: AppColors.AchievmentsTextColor);
+  static final TextStyle MegaEventDescription = TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
+    color: AppColors.achievementsTextColor,
+  );
 
-  static final TextStyle MegaEventButtonText=TextStyle(
+  static final TextStyle MegaEventButtonText = TextStyle(
     fontSize: 11.sp,
     fontWeight: FontWeight.w500,
     color: Colors.white,
   );
 
+  static final TextStyle font20InderRegularDarkJungleGreen = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.darkJungleGreen,
+    fontFamily: "Inder"
+  );
 
+  static final TextStyle font24InderRegularLavaRed = TextStyle(
+      fontSize: 24.sp,
+      fontWeight: FontWeightHelper.regular,
+      color: AppColors.appMainColor,
+      fontFamily: "Inder"
+  );
 }

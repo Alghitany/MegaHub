@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theming/app_colors.dart';
 
-class Achievementcategory extends StatefulWidget {
-  const Achievementcategory({super.key});
+class AchievementCategory extends StatefulWidget {
+  const AchievementCategory({super.key});
 
   @override
-  State<Achievementcategory> createState() => _AchievementcategoryState();
+  State<AchievementCategory> createState() => _AchievementCategoryState();
 }
 
-class _AchievementcategoryState extends State<Achievementcategory> {
+class _AchievementCategoryState extends State<AchievementCategory> {
   final List<String> tracks = ["All", "Events", "Podcast", "challenges", "Online sessions",];
   int selectedIndex = 0;
   @override
@@ -33,14 +33,14 @@ class _AchievementcategoryState extends State<Achievementcategory> {
               height: 30.h,
               padding: EdgeInsets.symmetric(horizontal: 24.h,vertical: 10),
               decoration: BoxDecoration(
-                color: isSelected ? AppColors.appMainColor : AppColors.AchievmentsColor,
+                color: isSelected ? AppColors.appMainColor : AppColors.achievementsColor,
                 borderRadius: BorderRadius.circular(25),
               ),
               alignment: Alignment.center,
               child: Text(
                 tracks[index],
                 style: TextStyle(
-                  color: isSelected ? Colors.white : AppColors.AchievmentsTextColor,
+                  color: isSelected ? Colors.white : AppColors.achievementsTextColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),
