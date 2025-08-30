@@ -31,7 +31,7 @@ class _RoadmapsCategoryState extends State<RoadmapsCategory> {
               });},
             child: Container(
               height: 25.h,
-              padding: EdgeInsets.symmetric(horizontal: 20.h,vertical:8),
+              padding: EdgeInsets.symmetric(horizontal: 20.h,vertical: 10),
               decoration: BoxDecoration(
                 color: isSelected ? AppColors.appMainColor : AppColors.AchievmentsColor,
                 borderRadius: BorderRadius.circular(25),
