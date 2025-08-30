@@ -4,7 +4,7 @@ class TimerBlock extends StatelessWidget {
   final String value;
   final String label;
 
-  const TimerBlock({required this.value, required this.label});
+  const TimerBlock({super.key, required this.value, required this.label});
 
   @override
   Widget build(BuildContext context) {
