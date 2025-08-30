@@ -47,9 +47,9 @@ class AppRouter {
       case Routes.achievementScreen:
         return MaterialPageRoute(builder: (_) => const AchievementScreen());
       case Routes.roadmapsScreen:
-        return MaterialPageRoute(builder: (_) => RoadmapsScreen());
+        return MaterialPageRoute(builder: (_) =>  RoadMapsScreen());
       case Routes.showroomScreen:
-        return MaterialPageRoute(builder: (_) => ShowroomScreen());
+        return MaterialPageRoute(builder: (_) =>  ShowroomScreen());
       default:
         return null;
     }
