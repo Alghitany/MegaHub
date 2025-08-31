@@ -10,7 +10,7 @@ part of 'home_api_service.dart';
 
 class _HomeApiService implements HomeApiService {
   _HomeApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://megahubproject.runasp.net/api/';
+    baseUrl ??= 'https://megahubproject.runasp.net/api/';
   }
 
   final Dio _dio;

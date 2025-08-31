@@ -25,7 +25,6 @@ mixin _$HomeState {
     userSuccess,
     required TResult Function(ApiErrorModel apiErrorModel) userError,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -36,16 +35,11 @@ mixin _$HomeState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-
     TResult Function()? userLoading,
-
     TResult Function(UserDetailsResponseModel? userDetails)? userSuccess,
-
     TResult Function(ApiErrorModel apiErrorModel)? userError,
-
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -53,7 +47,6 @@ mixin _$HomeState {
     required TResult Function(_UserSuccess value) userSuccess,
     required TResult Function(_UserError value) userError,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -511,10 +504,10 @@ class __$$UserErrorImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? apiErrorModel = freezed}) {
+  $Res call({Object? apiErrorModel = null}) {
     return _then(
       _$UserErrorImpl(
-        freezed == apiErrorModel
+        null == apiErrorModel
             ? _value.apiErrorModel
             : apiErrorModel // ignore: cast_nullable_to_non_nullable
                   as ApiErrorModel,
@@ -541,17 +534,12 @@ class _$UserErrorImpl implements _UserError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserErrorImpl &&
-            const DeepCollectionEquality().equals(
-              other.apiErrorModel,
-              apiErrorModel,
-            ));
+            (identical(other.apiErrorModel, apiErrorModel) ||
+                other.apiErrorModel == apiErrorModel));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    const DeepCollectionEquality().hash(apiErrorModel),
-  );
+  int get hashCode => Object.hash(runtimeType, apiErrorModel);
 
   /// Create a copy of HomeState
   /// with the given fields replaced by the non-null parameter values.
