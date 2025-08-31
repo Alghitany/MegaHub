@@ -24,6 +24,7 @@ mixin _$LoginState<T> {
     required TResult Function(T data) loginSuccess,
     required TResult Function(ApiErrorModel apiErrorModel) loginError,
   }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -34,11 +35,16 @@ mixin _$LoginState<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+
     TResult Function()? loginLoading,
+
     TResult Function(T data)? loginSuccess,
+
     TResult Function(ApiErrorModel apiErrorModel)? loginError,
+
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
@@ -46,6 +52,7 @@ mixin _$LoginState<T> {
     required TResult Function(LoginSuccess<T> value) loginSuccess,
     required TResult Function(LoginError<T> value) loginError,
   }) => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,

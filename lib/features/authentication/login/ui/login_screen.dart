@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_hub/features/authentication/login/ui/widget/login_bloc_listener.dart';
 import 'package:mega_hub/features/authentication/login/ui/widget/login_form.dart';
+
 import '../../../../core/helpers/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_styles.dart';
@@ -21,67 +22,67 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 70,right: 72,top: 18),
+            padding: EdgeInsets.only(left: 70, right: 72, top: 18),
             child: Image.asset(
               "assets/images/login.png",
-              height:296.h,
+              height: 296.h,
               width: double.infinity.w,
               fit: BoxFit.cover,
             ),
           ),
-          Expanded(child: Container(
-
-            width: double.infinity.w,
-            padding: EdgeInsets.fromLTRB(20.w, 15.h, 20.w, 0.h),
-            decoration: BoxDecoration(
-              color: AppColors.authBackground,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25.r),
-                topRight: Radius.circular(25.r),
+          Expanded(
+            child: Container(
+              width: double.infinity.w,
+              padding: EdgeInsets.fromLTRB(20.w, 15.h, 20.w, 0.h),
+              decoration: BoxDecoration(
+                color: AppColors.authBackground,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25.r),
+                  topRight: Radius.circular(25.r),
+                ),
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const AuthSwitch(isSignup: false),
+                    verticalSpace(16),
+                    LoginForm(),
+                    verticalSpace(8),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: ForgetPasswordText(),
+                    ),
+                    verticalSpace(16),
+                    AppTextButton(
+                      buttonText: "Login",
+                      onPressed: () {
+                        validateThenDoLogin(context);
+                      },
+                    ),
+                    verticalSpace(16),
+                    Text(
+                      "Or Login with",
+                      style: AppTextStyles.font12InterSemiBoldLavaRed,
+                    ),
+                    verticalSpace(8),
+                    Align(
+                      alignment: Alignment.center,
+                      child: AuthOtherMethods(),
+                    ),
+                    LoginBlocListener(),
+                  ],
+                ),
               ),
             ),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const AuthSwitch(isSignup: false),
-                  verticalSpace(16),
-                  LoginForm(),
-                  verticalSpace(8),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: ForgetPasswordText(),
-                  ),
-                  verticalSpace(16),
-                  AppTextButton(
-                    buttonText: "Login",
-                    onPressed: () {
-                      validateThenDoLogin(context);
-                    },
-                  ),verticalSpace(16),
-                  Text(
-                    "Or Login with",
-                    style: AppTextStyles.font12InterSemiBoldLavaRed,
-                  ),
-                  verticalSpace(8),
-                  Align(
-                    alignment: Alignment.center,
-                    child: AuthOtherMethods(),
-                  ),
-                  LoginBlocListener()
-                ],
-              ),
-            ),
-          ))
+          ),
         ],
       ),
     );
   }
 }
 
-
 void validateThenDoLogin(BuildContext context) {
   if (context.read<LoginCubit>().formKey.currentState!.validate()) {
     context.read<LoginCubit>().emitLoginStates();
   }
 }
-

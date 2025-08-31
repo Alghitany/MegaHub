@@ -16,9 +16,11 @@ void main() async {
   await checkIfLoggedUser();
   runApp(MegaHubApp(appRouter: AppRouter()));
 }
+
 checkIfLoggedUser() async {
-  String? userToken =
-  await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+  String? userToken = await SharedPrefHelper.getSecuredString(
+    SharedPrefKeys.userToken,
+  );
   if (!userToken.isNullOrEmpty()) {
     isLoggedInUser = true;
   } else {

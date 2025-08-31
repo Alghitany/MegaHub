@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mega_hub/features/authentication/login/data/repo/login_repo.dart';
+
 import '../../../../core/helpers/constants.dart';
 import '../../../../core/helpers/shared_pref_helper.dart';
 import '../../../../core/networking/dio_factory.dart';
@@ -9,17 +10,20 @@ import 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;
+
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+
   @override
   Future<void> close() {
     emailController.dispose();
     passwordController.dispose();
     return super.close();
   }
+
   void emitLoginStates() async {
     emit(const LoginState.loginLoading());
 
@@ -30,7 +34,7 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
     response.when(
-      success: (loginResponse) async{
+      success: (loginResponse) async {
         await saveUserToken(loginResponse.token ?? '');
         emit(LoginState.loginSuccess(loginResponse));
       },
@@ -38,7 +42,8 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginState.loginError(apiErrorModel));
       },
     );
-}
+  }
+
   Future<void> saveUserToken(String token) async {
     // save token to shared preferences
     await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
