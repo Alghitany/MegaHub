@@ -14,7 +14,8 @@ platform :android do
         testers: "
         ahmedalghitany12@gmail.com,
         amanymahmoud22y@gmail.com,
-        mostafalabib2004@gmail.com",
+        mostafalabib2004@gmail.com,
+        ranimtamer828@gmail.com",
         release_notes: "First Fastlane Firebase Distribution!"
       )
   end
