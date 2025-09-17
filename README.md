@@ -1,16 +1,31 @@
-# mega_hub
+# 📱 MegaHub  
 
-A new Flutter project.
+**MegaHub** – A mobile app built with Flutter to manage and showcase **Mega Team’s** activities.  
+It helps CS students stay connected with team events, explore tracks roadmaps, and celebrate achievements.  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features  
+- 📅 Schedule and view upcoming **team events**  
+- 🛤️ Explore **tracks roadmaps** for CS learning paths  
+- 🏆 View the latest **member achievements**  
+- 🎯 Showcase overall **team achievements** (circles & board)  
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🎥 Demo  
+> 📌 Demo video/screenshots.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+https://github.com/user-attachments/assets/5c980442-49c8-4b33-b3a8-d6263b3deb15
+
+
+
+---
+
+## 🛠️ Tech Stack  
+- **Dart** – Programming language  
+- **Flutter** – Cross-platform mobile framework  
+- **REST API** – Backend integration  
+- **Bloc & Cubit** – State management  
+- **Dio & Retrofit** – Networking  
